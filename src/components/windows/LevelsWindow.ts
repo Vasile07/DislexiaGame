@@ -77,7 +77,7 @@ export class LevelsWindow extends Window {
             const button = new SmallButton(
                 `${i + 1}`, // create a button with the level number text on it
                 () => game.showScreen(GameScreen, { level: i + 1 }), // on click, show the game screen with the selected level parameter passed
-                locked, // pass the locked state to the button (see SmallButton.ts)
+                // locked, // pass the locked state to the button (see SmallButton.ts)
             );
 
             button.x = levelBlock.width / 2; // set button x position
@@ -117,7 +117,7 @@ export class LevelsWindow extends Window {
             //     levelBlock.addChild(hole); // add the hole to the substrate Sprite(Container)
             // }
 
-            if (!locked) {
+            // if (!locked) {
                 // if the level is not locked
                 // const stars = Math.round(Math.random() * 3); // get a random number of stars to show (TODO: to be abstracted to a game state controller)
 
@@ -134,7 +134,7 @@ export class LevelsWindow extends Window {
 
                 //     holes[i].addChild(star); // add the star to the hole Sprite(Container)
                 // }
-            }
+            // }
 
             levels.push(levelBlock); // add the substrate to the levels array
         }
