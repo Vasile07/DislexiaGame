@@ -1,11 +1,15 @@
-```
+
 #Run the ui
+## Change work directory
+```
 cd ./pixi-game-ui
-
-# Install dependencies
+```
+## Install dependencies
+```
 npm install
-
-# Start the project
+```
+## Start the project
+```
 npm start
 ```
 
