@@ -72,7 +72,7 @@ export class LevelsWindow extends Window {
             // loop through the levels
             const levelBlock = Sprite.from('SmallButton-substrate'); // create a button substrate
 
-            const locked = openLevels < i + 1; // check if the level is locked
+            // const locked = openLevels < i + 1; // check if the level is locked
 
             const button = new SmallButton(
                 `${i + 1}`, // create a button with the level number text on it
@@ -86,54 +86,54 @@ export class LevelsWindow extends Window {
             levelBlock.addChild(button); // add the button to the substrate Sprite(Container)
             levelBlock.scale.set(0.87); // scale the substrate down a bit
 
-            const holes: Sprite[] = []; // create an array of sprites variable for the stars holes
+            // const holes: Sprite[] = []; // create an array of sprites variable for the stars holes
 
-            for (let i = 0; i < 3; i++) {
-                // create 3 holes for the stars
-                const hole = Sprite.from('Radio-bg'); // create a hole sprite
+            // for (let i = 0; i < 3; i++) {
+            //     // create 3 holes for the stars
+            //     const hole = Sprite.from('Radio-bg'); // create a hole sprite
 
-                hole.anchor.set(0.5); // set anchor to the center of the sprite
+            //     hole.anchor.set(0.5); // set anchor to the center of the sprite
 
-                if (i === 0) {
-                    // set the x and y position of the first hole
-                    hole.x = 40; // set x position
-                    hole.y = levelBlock.height - 5; // set y position
-                }
+            //     if (i === 0) {
+            //         // set the x and y position of the first hole
+            //         hole.x = 40; // set x position
+            //         hole.y = levelBlock.height - 5; // set y position
+            //     }
 
-                if (i === 1) {
-                    // set the x and y position of the second hole
-                    hole.x = levelBlock.width / 2 + 10; // set x position
-                    hole.y = levelBlock.height + 5; // set y position
-                }
+            //     if (i === 1) {
+            //         // set the x and y position of the second hole
+            //         hole.x = levelBlock.width / 2 + 10; // set x position
+            //         hole.y = levelBlock.height + 5; // set y position
+            //     }
 
-                if (i === 2) {
-                    // set the x and y position of the third hole
-                    hole.x = levelBlock.width - 20; // set x position
-                    hole.y = levelBlock.height - 5; // set y position
-                }
+            //     if (i === 2) {
+            //         // set the x and y position of the third hole
+            //         hole.x = levelBlock.width - 20; // set x position
+            //         hole.y = levelBlock.height - 5; // set y position
+            //     }
 
-                holes.push(hole); // add the hole to the holes array
+            //     holes.push(hole); // add the hole to the holes array
 
-                levelBlock.addChild(hole); // add the hole to the substrate Sprite(Container)
-            }
+            //     levelBlock.addChild(hole); // add the hole to the substrate Sprite(Container)
+            // }
 
             if (!locked) {
                 // if the level is not locked
-                const stars = Math.round(Math.random() * 3); // get a random number of stars to show (TODO: to be abstracted to a game state controller)
+                // const stars = Math.round(Math.random() * 3); // get a random number of stars to show (TODO: to be abstracted to a game state controller)
 
-                for (let i = 0; i < stars; i++) {
-                    // loop through the stars amount to be shown
-                    const star = Sprite.from('StarIcon'); // create a star sprite
-                    const hole = holes[i]; // get the hole sprite from the holes array
+                // for (let i = 0; i < stars; i++) {
+                //     // loop through the stars amount to be shown
+                //     const star = Sprite.from('StarIcon'); // create a star sprite
+                //     const hole = holes[i]; // get the hole sprite from the holes array
 
-                    star.anchor.set(0.5); // set anchor to the center of the sprite
-                    star.scale.set(0.5); // scale the star down a bit
+                //     star.anchor.set(0.5); // set anchor to the center of the sprite
+                //     star.scale.set(0.5); // scale the star down a bit
 
-                    star.x = hole.width / 2 - 12; // set x position
-                    star.y = hole.height / 2 - 10; // set y position
+                //     star.x = hole.width / 2 - 12; // set x position
+                //     star.y = hole.height / 2 - 10; // set y position
 
-                    holes[i].addChild(star); // add the star to the hole Sprite(Container)
-                }
+                //     holes[i].addChild(star); // add the star to the hole Sprite(Container)
+                // }
             }
 
             levels.push(levelBlock); // add the substrate to the levels array
